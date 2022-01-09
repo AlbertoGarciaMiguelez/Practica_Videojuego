@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Player : MonoBehaviour
     public Camera cam;
     private Vector2 moveDirection;
     private Vector2 mousePos;
+    
 
     // Update is called once per frame
     void Update()
@@ -39,3 +41,4 @@ public class Player : MonoBehaviour
         rb.rotation = angle;
     }
 }
+

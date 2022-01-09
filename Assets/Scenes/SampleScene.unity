@@ -259,7 +259,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 8a8f714df919d4d41ba01e21e470be45, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2132,6 +2132,19 @@ MonoBehaviour:
   bulletPrefab: {fileID: 3632432295625754430, guid: 0df442cf66a5b4343aec1cd36a4979e1,
     type: 3}
   bulletForce: 20
+--- !u!114 &66045208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66045206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17fe60bf6f3ddb44aaf67495019a8024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: {fileID: 438156302049601659}
 --- !u!4 &66045211 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 438156302359350992, guid: 84c9e3786ac2bcb4b9e08305fc5b2004,
@@ -2547,6 +2560,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2562,6 +2576,19 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b36cc422ac08011459c0581d3d3a043e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 66045211}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -2613,7 +2640,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2944,56 +2971,61 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - waveName: Oleada para bebes
+  - waveName: inicio
     noOfEnemies: 10
     typeOfEnemies:
     - {fileID: 161760397936890757, guid: 6e5d95f50c60faf4a84ff07c87612f37, type: 3}
-    spawnInterval: 2
-  - waveName: Oleada 2
-    noOfEnemies: 20
-    typeOfEnemies:
-    - {fileID: 0}
-    spawnInterval: 2
-  - waveName: Oleada 3
-    noOfEnemies: 0
-    typeOfEnemies:
-    - {fileID: 0}
-    spawnInterval: 2
-  - waveName: Oleada 4
-    noOfEnemies: 0
-    typeOfEnemies:
-    - {fileID: 0}
-    spawnInterval: 2
-  - waveName: Oleada 5
-    noOfEnemies: 0
-    typeOfEnemies:
-    - {fileID: 0}
-    spawnInterval: 2
-  - waveName: Oleada 6
-    noOfEnemies: 0
-    typeOfEnemies:
-    - {fileID: 0}
-    spawnInterval: 2
-  - waveName: Oleada 7
+    spawnInterval: 1.5
+  - waveName: Oleada para bebes
     noOfEnemies: 40
     typeOfEnemies:
-    - {fileID: 0}
-    spawnInterval: 2
-  - waveName: Oleada 8
-    noOfEnemies: 50
-    typeOfEnemies:
-    - {fileID: 0}
-    spawnInterval: 3
-  - waveName: Oleada 9
-    noOfEnemies: 50
-    typeOfEnemies:
-    - {fileID: 0}
-    spawnInterval: 2
-  - waveName: Oleada del inframundo
-    noOfEnemies: 50
-    typeOfEnemies:
-    - {fileID: 0}
+    - {fileID: 161760397936890757, guid: 6e5d95f50c60faf4a84ff07c87612f37, type: 3}
     spawnInterval: 1.5
+  - waveName: Oleada 2
+    noOfEnemies: 50
+    typeOfEnemies:
+    - {fileID: 161760397936890757, guid: 6e5d95f50c60faf4a84ff07c87612f37, type: 3}
+    spawnInterval: 1.5
+  - waveName: Oleada 3
+    noOfEnemies: 40
+    typeOfEnemies:
+    - {fileID: 161760397936890757, guid: 6e5d95f50c60faf4a84ff07c87612f37, type: 3}
+    spawnInterval: 1
+  - waveName: Oleada 4
+    noOfEnemies: 50
+    typeOfEnemies:
+    - {fileID: 161760397936890757, guid: 6e5d95f50c60faf4a84ff07c87612f37, type: 3}
+    spawnInterval: 1
+  - waveName: Oleada 5
+    noOfEnemies: 70
+    typeOfEnemies:
+    - {fileID: 161760397936890757, guid: 6e5d95f50c60faf4a84ff07c87612f37, type: 3}
+    spawnInterval: 1
+  - waveName: Oleada 6
+    noOfEnemies: 100
+    typeOfEnemies:
+    - {fileID: 161760397936890757, guid: 6e5d95f50c60faf4a84ff07c87612f37, type: 3}
+    spawnInterval: 1
+  - waveName: Oleada 7
+    noOfEnemies: 120
+    typeOfEnemies:
+    - {fileID: 161760397936890757, guid: 6e5d95f50c60faf4a84ff07c87612f37, type: 3}
+    spawnInterval: 1
+  - waveName: Oleada 8
+    noOfEnemies: 150
+    typeOfEnemies:
+    - {fileID: 161760397936890757, guid: 6e5d95f50c60faf4a84ff07c87612f37, type: 3}
+    spawnInterval: 1
+  - waveName: Oleada 9
+    noOfEnemies: 190
+    typeOfEnemies:
+    - {fileID: 161760397936890757, guid: 6e5d95f50c60faf4a84ff07c87612f37, type: 3}
+    spawnInterval: 1
+  - waveName: Oleada del inframundo
+    noOfEnemies: 220
+    typeOfEnemies:
+    - {fileID: 161760397936890757, guid: 6e5d95f50c60faf4a84ff07c87612f37, type: 3}
+    spawnInterval: 1
   spawnPoints:
   - {fileID: 248442098}
   - {fileID: 375710125}
@@ -3076,7 +3108,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 8a8f714df919d4d41ba01e21e470be45, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -24277,7 +24309,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 8a8f714df919d4d41ba01e21e470be45, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -30953,6 +30985,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 438156302359350994, guid: 84c9e3786ac2bcb4b9e08305fc5b2004,
         type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 438156302359350994, guid: 84c9e3786ac2bcb4b9e08305fc5b2004,
+        type: 3}
       propertyPath: m_BodyType
       value: 0
       objectReference: {fileID: 0}
@@ -30973,3 +31010,15 @@ PrefabInstance:
       objectReference: {fileID: 519420031}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84c9e3786ac2bcb4b9e08305fc5b2004, type: 3}
+--- !u!114 &438156302049601659 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 438156302359351005, guid: 84c9e3786ac2bcb4b9e08305fc5b2004,
+    type: 3}
+  m_PrefabInstance: {fileID: 438156302049601658}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66045206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6d6eedd57e1d5b4bab8882b4264831c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
