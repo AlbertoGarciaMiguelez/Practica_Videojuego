@@ -18,10 +18,6 @@ public class Player : MonoBehaviour
     
     void FixedUpdate() {
         Move();
-
-        Vector2 lookDirection = mousePosition - rb.position;
-        float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
-        rb.rotation = angle;
     }
 
     void ProcessInputs(){
@@ -30,6 +26,7 @@ public class Player : MonoBehaviour
         float moveY = Input.GetAxisRaw("Vertical");
 
         moveDirection = new Vector2(moveX, moveY).normalized;
+
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
 
