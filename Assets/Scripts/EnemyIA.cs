@@ -5,16 +5,16 @@ using UnityEngine.AI;
 
 public class EnemyIA : MonoBehaviour
 {
-    public Transform player;
+    public GameObject player;
     private Rigidbody2D rb;
     private Vector2 movement;
     public float moveSpeed = 3f;
-    NavMeshAgent agent;
-
+    public NavMeshAgent agent;
 
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         rb = this.GetComponent<Rigidbody2D>();
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
@@ -25,7 +25,7 @@ public class EnemyIA : MonoBehaviour
     void Update()
     {
         processInput();
-        agent.SetDestination(player.position);
+        agent.SetDestination(player.gameObject.transform.position);
 
     }
 
@@ -35,12 +35,23 @@ public class EnemyIA : MonoBehaviour
 
 
     void processInput(){
-        movement = new Vector2(player.position.x - transform.position.x, player.position.y - transform.position.y).normalized;
+        //movement = new Vector2(player.position.x - transform.position.x, player.position.y - transform.position.y).normalized;
         float angle = Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg;
         rb.rotation = angle;
     }
 
     void moveEnemy(){
         rb.velocity = new Vector2 (movement.x * moveSpeed , movement.y * moveSpeed);
+    }
+
+
+
+private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Bullet"){
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
+
     }
 }
