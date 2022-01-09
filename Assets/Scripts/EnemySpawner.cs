@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class Wave
@@ -52,6 +53,7 @@ public class EnemySpawner : MonoBehaviour
                 
             }else
             {
+                SceneManager.LoadScene("Menu");
                 Debug.Log("GameFinish");
             }
         } 
